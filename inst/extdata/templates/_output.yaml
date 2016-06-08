@@ -1,0 +1,12 @@
+html_document:
+   highlight: pygments
+   theme: united
+   css: custom.css
+   toc: yes 
+knitrBootstrap::bootstrap_document:
+    theme: United
+    highlight: Solarized - Light
+    theme.chooser: TRUE
+    highlight.chooser: TRUE
+
+

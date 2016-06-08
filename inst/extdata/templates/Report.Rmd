@@ -1,0 +1,60 @@
+---
+title: "Report:  "
+author: "Lerong Li and Jing Wang"
+date: " `r Sys.Date()` "
+---
+
+***
+
+
+```{r echo=FALSE}
+library(projectR)
+# load_pkgs(ggplot2,gplots,colorRamps,RColorBrewer)
+set_global_chunk()
+```
+
+# Executive Summary
+
+## 1. Introduction
+  
+## 2. Objectives
+  
+## 3. Data and Methods
+  
+## 4. Results
+
+***
+
+# R Libraries
+
+We begin by loading all the libraries we will need for this analysis. A list of the current versions of the libraries used for the analysis can be found in the appendix.
+
+```{r echo=TRUE}
+library(ClassDiscovery)
+library(ClassComparison)
+```
+
+#  Load the Data
+
+```{r cache=T}
+
+```
+
+
+
+***
+# Appendix
+
+## A File Location
+This analysis was run in the following directory:
+```{r getLocation}
+getwd()
+```
+
+## B SessionInfo
+This analysis was run in the following sofeware environment:
+```{r sessionInfo}
+sessionInfo()
+```
+
+
