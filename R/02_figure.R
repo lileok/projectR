@@ -33,15 +33,15 @@ plot_scatter = function(x,y,cex = 1,...){
 #' @export
 plot_ccc = function (v1, v2, conf.level = 0.95, cex = 0.8,
                      tag = "", main = NA,#sample_name = NA,
-                     xlab =NA, ylab = NA, plot = T, MDplot = F,
+                     xlab = NA, ylab = NA, plot = T, MDplot = F,
                      xlim = NULL,ylim = NULL, text_col = "red",pt_col = "gray50",
                      pch = 21,lty = c(1,2),lcol = c("blue","red"),alpha = 0.05 ,...)
 {
   v1 = as.vector(v1)
   v2 = as.vector(v2)
 
-  if (is.na(xlab)) xlab = deparse(substitute(v1))
-  if (is.na(ylab)) ylab = deparse(substitute(v2))
+#   if (is.na(xlab)) xlab = deparse(substitute(v1))
+#   if (is.na(ylab)) ylab = deparse(substitute(v2))
 
   if(is.null(xlim)) xlim = range(v1,na.rm = T)else xlim = xlim
   if(is.null(ylim)) ylim = range(v2,na.rm = T)else ylim = ylim
@@ -113,7 +113,7 @@ plot_ccc = function (v1, v2, conf.level = 0.95, cex = 0.8,
     diff_sd = sd(md_data$delta, na.rm = TRUE)
     extremes = qnorm(c(alpha/2, 1 - alpha/2), diff_mean, diff_sd)
     md_data$isOutlier = md_data[, "delta"] < extremes[1] | md_data[, "delta"] > extremes[2]
-    gtitle = str_c(tag,"\n",sprintf("%d possible outliers at significance level of %.3f",
+    gtitle = stringr::str_c(tag,"\n",sprintf("%d possible outliers at significance level of %.3f",
                                     sum(md_data$isOutlier, na.rm = TRUE), alpha, collapse = ""))
     ylim = c(min(c(extremes, md_data$delta), na.rm = TRUE),
              max(c(extremes, md_data$delta), na.rm = TRUE))
