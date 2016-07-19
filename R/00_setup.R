@@ -12,6 +12,30 @@ get_dir = function(){
   invisible(out)
 }
 
+#' @export
+get_box_dir = function(loc){
+  switch (loc,
+          office_win = file.path("C:","Users","lli11","OneDrive"),
+          home_win = file.path("D:","SkyDrive") ,
+          home_mac = file.path("Users","lileok","OneDrive")
+          #ubuntu = file.path("~")
+  )
+}
+
+
+#' source all dotR files in dir
+#' @param dir directory needed source
+#' @param  trace show verbose information
+#' @export
+#'
+source_dir = function(dir = getwd(),trace = TRUE, ...){
+  for (nm in list.files(dir, pattern = "\\.[RrSsQq]$")) {
+    if(trace) cat(nm,"sourced")
+    source(file.path(dir, nm), ...)
+    if(trace) cat("\n")
+  }
+}
+
 
 #' Create a new report
 #'
